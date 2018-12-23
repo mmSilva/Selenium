@@ -18,11 +18,11 @@ public class HomePage extends PageObject {
 	@FindBy(how = How.XPATH, using = "//*[@id=\"app_sub_title\"]")
 	protected WebElement vehicleInsurance;
 	
-	public void entrarTelaTricentis() {
+	public void entrarTelaInicial() {
 		driver.get("http://sampleapp.tricentis.com/101/index.php");
 	}
 	
-	public void clickAutomobileButton(){
+	public void clickAbrirForm(){
 		wait.until(ExpectedConditions.elementToBeClickable(automobileMenuButton)).click();
 	}
 	
