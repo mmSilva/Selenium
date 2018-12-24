@@ -11,7 +11,7 @@ public abstract class PageObject {
 		
 	public PageObject (WebDriver driver) {
 		PageObject.driver = driver;
-		wait = new WebDriverWait(driver, 10);
+		wait = new WebDriverWait(driver, 50);
 		PageFactory.initElements(driver, this);
 	}
 }

@@ -1,12 +1,15 @@
 package Treinamento.Selenium;
 
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import pages.FormPage;
 import pages.HomePage;
+
+import java.awt.Toolkit;
 
 import org.junit.After;
 import org.junit.Before;
@@ -14,10 +17,9 @@ import org.junit.Test;
 
 
 
-public class RunTest{
+public class RunTest {
 	static WebDriver driver;
 	static WebElement element;
-	static WebDriverWait wait = new WebDriverWait(driver, 10);
 	static HomePage homePage;
 	static FormPage formPage;
 
@@ -25,8 +27,15 @@ public class RunTest{
    
 	@Before
 	public void setUp() throws Exception {
-		System.setProperty("webdriver.chrome.driver", this.getClass().getResource("chromedriver.exe").getPath());
-		driver = new ChromeDriver();
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Pichau\\git\\repository\\Selenium\\src\\main\\java\\resources\\chromedriver.exe");
+		//System.setProperty("webdriver.chrome.driver", this.getClass().
+		//		getClassLoader().getResource("chromedriver.exe").getPath());
+		
+		 		 
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--start-maximized");
+		driver = new ChromeDriver(options);
+	
 		homePage = new HomePage(driver);
 		formPage = new FormPage(driver);
 		
@@ -38,8 +47,7 @@ public class RunTest{
 	}
 
 	@Test
-	public void test() throws Exception {
-				
+	public void test() throws Exception {				
 		homePage.entrarTelaInicial();
 		homePage.clickAbrirForm();
 		Thread.sleep(5000);

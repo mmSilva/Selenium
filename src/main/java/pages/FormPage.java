@@ -3,7 +3,6 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
@@ -154,6 +153,7 @@ public class FormPage extends PageObject {
 	//Métodos preenchimento de dados no formulário
 	
 	public void selecionarCarro(String carro) {
+		wait.until(ExpectedConditions.elementToBeClickable(marca)).click();
 		gem.selectByVisibleText(marca, carro);
 	}
 	public void selecionarQtdLugares(String qtd) {

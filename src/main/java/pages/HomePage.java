@@ -19,7 +19,7 @@ public class HomePage extends PageObject {
 	protected WebElement vehicleInsurance;
 	
 	public void entrarTelaInicial() {
-		driver.get("http://sampleapp.tricentis.com/101/index.php");
+		driver.get("http://sampleapp.tricentis.com/101/index.php");		
 	}
 	
 	public void clickAbrirForm(){
